@@ -28,7 +28,13 @@ public class LogParser {
                 continue;
             }
 
-            LocalDateTime timestamp = parseTimestamp(matcher.group(1));
+            LocalDateTime timestamp;
+            try {
+                timestamp = parseTimestamp(matcher.group(1));
+            } catch (Exception e) {
+                System.err.println("Пропущена строка (неправильная дата): " + matcher.group(1));
+                continue;
+            }
             String user = matcher.group(2);
             String operationText = matcher.group(3);
 
