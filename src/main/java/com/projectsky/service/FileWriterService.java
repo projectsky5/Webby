@@ -37,7 +37,7 @@ public class FileWriterService {
 
                 BigDecimal finalBalance = calculator.calculateFinalBalance(transactions);
 
-                String finalLine = String.format("[%s] %s final balance %.2f",
+                String finalLine = String.format(Locale.US, "[%s] %s final balance %.2f",
                         OUTPUT_FORMAT.format(LocalDateTime.now()),
                         user,
                         finalBalance);
