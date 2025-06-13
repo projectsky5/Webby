@@ -5,6 +5,7 @@ import lombok.Value;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Value
 @Builder
@@ -14,7 +15,7 @@ public class Transaction implements Comparable<Transaction> {
     String user;
     String operation;
     BigDecimal amount;
-    String relatedUser;
+    Optional<String> relatedUser;
 
     @Override
     public int compareTo(Transaction o) {
